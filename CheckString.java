@@ -1,4 +1,5 @@
 import java.util.regex.*;
+import java.io.*;
 public class  CheckString implements CheckRegex
 {
 	private String data;

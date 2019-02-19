@@ -30,6 +30,16 @@ public class Main
 							e.printStackTrace();
 							Usage usage = new Usage();
 						}
+					case "-String":
+						try
+						{
+							CheckString checkstring = new CheckString(str2, str3);
+							checkstring.Check();
+						}catch(Exception e)
+						{
+							e.printStackTrace();
+							Usage usage = new Usage();
+						}
 					/*case "-Email":
 						try
 						{
