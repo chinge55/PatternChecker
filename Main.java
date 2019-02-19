@@ -1,4 +1,4 @@
-
+import java.io.*;
 public class Main
 {
 	public static void main(String[] args)
@@ -17,6 +17,7 @@ public class Main
 				String str1 = args[0];
 				String str2 = args[1];
 				String str3 = args[2];
+				BufferedReader breader = new BufferedReader(new InputStreamReader(System.in));
 				switch(str1)
 				{
 					case "-Phone":
@@ -24,7 +25,23 @@ public class Main
 						{
 							CheckPhonenumber checkphonenumber = new CheckPhonenumber(str2, str3);
 							checkphonenumber.Check();
+						}catch(Exception e)
+						{
+							e.printStackTrace();
+							Usage usage = new Usage();
 						}
+					/*case "-Email":
+						try
+						{
+							Checkemail checkemail = new Checkemail(str2, str3);
+							checkemail.Check();
+						}catch(Exception e)
+						{
+							e.printStackTrace();
+							Usage usage = new Usage();
+						}*/
+					default:
+						Usage usage = new Usage();
 
 				}
 

@@ -8,18 +8,34 @@ public class  CheckString implements CheckRegex
 		this.data = data;
 		this.string = string;
 	}
+	
 	@Override
 	public void Check()
 	{
-		Pattern p = Pattern.compile(data);
-		Matcher m = p.matcher(string);
-		System.out.println("The data is in :");
-		while(m.find())
+		try
 		{
-			System.out.println("index "+m.start()+" to "+m.end());
+			FileReader filereader = new FileReader(string);
+			BufferedReader breader = new BufferedReader(filereader);
+			Pattern pattern = Pattern.compile(data);
+			String line;
+			while((line = breader.readLine())!=null)
+			{
+				Matcher m = pattern.matcher(line);
+				if(m.find())
+					System.out.println(line);
+
+			}
+			breader.close();
+			filereader.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			Usage usage = new Usage();
 		}
 
-
 	}
+
+
 
 }
