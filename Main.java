@@ -23,7 +23,7 @@ public class Main
 					case "-Phone":
 						try
 						{
-							CheckPhonenumber checkphonenumber = new CheckPhonenumber(str2, str3);
+							CheckPhonenumber checkphonenumber = new CheckPhonenumber(str2);
 							checkphonenumber.Check();
 						}catch(Exception e)
 						{

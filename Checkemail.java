@@ -1,30 +1,26 @@
 import java.util.regex.*;
 import java.io.*;
-public class  CheckString implements CheckRegex
+public class Checkemail implements CheckRegex
 {
-	private String data;
-	private String string;
-	public CheckString(String data, String string)
+	private String filename;
+	public Checkemail(String filename)
 	{
-		this.data = data;
-		this.string = string;
+		this.filename = filename;
 	}
-	
+
 	@Override
 	public void Check()
 	{
 		try
 		{
-			FileReader filereader = new FileReader(string);
+			FileReader filereader = new FileReader(filename);
 			BufferedReader breader = new BufferedReader(filereader);
-			Pattern pattern = Pattern.compile(data);
+			Pattern pattern = Pattern.compile();
 			String line;
 			while((line = breader.readLine())!=null)
 			{
 				Matcher m = pattern.matcher(line);
-				if(m.find())
-					System.out.println(line);
-				// yet to implement, if the line is very long then do something
+				// some work yet to be done
 
 			}
 			breader.close();
@@ -37,7 +33,4 @@ public class  CheckString implements CheckRegex
 		}
 
 	}
-
-
-
 }

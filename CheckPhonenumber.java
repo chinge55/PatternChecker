@@ -3,12 +3,10 @@ import java.util.regex.*;
 import java.io.*;
 public class CheckPhonenumber implements CheckRegex
 {
-	private String data;
-	private String string;
-	public CheckPhonenumber(String data, String string)
+	private String filename;
+	public CheckPhonenumber(String filename)
 	{
-		this.data = data;
-		this.string = string;
+		this.filename = filename;
 	}
 
 	@Override
@@ -16,9 +14,9 @@ public class CheckPhonenumber implements CheckRegex
 	{
 		try
 		{
-			FileReader filereader = new FileReader(string);
+			FileReader filereader = new FileReader(filename);
 			BufferedReader breader = new BufferedReader(filereader);
-			Pattern pattern = Pattern.compile(data);
+			Pattern pattern = Pattern.compile();
 			String line;
 			while((line = breader.readLine())!=null)
 			{
