@@ -18,12 +18,14 @@ public class CheckPhonenumber implements CheckRegex
 			BufferedReader breader = new BufferedReader(filereader);
 			Pattern pattern = Pattern.compile("(98)([0-9]{8}?)");
 			String line;
+			int i=0;
 			while((line = breader.readLine())!=null)
 			{
+				i++;
 				Matcher m = pattern.matcher(line);
 				while(m.find())
 				{	
-					System.out.println("index "+m.start()+" character:: "+m.group());
+					System.out.println("At Line: "+i+" index "+m.start()+" character:: "+m.group());
 				}
 			}
 			breader.close();
