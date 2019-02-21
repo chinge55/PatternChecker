@@ -15,7 +15,7 @@ public class Checkemail implements CheckRegex
 		{
 			FileReader filereader = new FileReader(filename);
 			BufferedReader breader = new BufferedReader(filereader);
-			Pattern pattern = Pattern.compile();
+			Pattern pattern = Pattern.compile("HAHA");
 			String line;
 			while((line = breader.readLine())!=null)
 			{
