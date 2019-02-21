@@ -16,13 +16,15 @@ public class CheckPhonenumber implements CheckRegex
 		{
 			FileReader filereader = new FileReader(filename);
 			BufferedReader breader = new BufferedReader(filereader);
-			Pattern pattern = Pattern.compile();
+			Pattern pattern = Pattern.compile("(98)([0-9]{8}?)");
 			String line;
 			while((line = breader.readLine())!=null)
 			{
 				Matcher m = pattern.matcher(line);
-				// some work yet to be done
-
+				while(m.find())
+				{	
+					System.out.println("index "+m.start()+" character:: "+m.group());
+				}
 			}
 			breader.close();
 			filereader.close();
