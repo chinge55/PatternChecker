@@ -1,9 +1,9 @@
 import java.util.regex.*;
 import java.io.*;
-public class Checkemail implements CheckRegex
+public class CheckString implements CheckRegex
 {
 	private String filename;
-	public Checkemail(String filename)
+	public CheckString(String filename)
 	{
 		this.filename = filename;
 	}
@@ -15,12 +15,20 @@ public class Checkemail implements CheckRegex
 		{
 			FileReader filereader = new FileReader(filename);
 			BufferedReader breader = new BufferedReader(filereader);
-			Pattern pattern = Pattern.compile("HAHA");
+			System.out.println("Please Enter The String");
+			BufferedReader takeinput = new BufferedReader(new InputStreamReader(System.in));
+			String data = takeinput.readLine();
 			String line;
+			int i=0;
+			Pattern pattern = Pattern.compile(data);
 			while((line = breader.readLine())!=null)
 			{
+				i++;
 				Matcher m = pattern.matcher(line);
-				// some work yet to be done
+				while(m.find())
+				{	
+					System.out.println("At Line: "+i+" index "+m.start()+" character:: "+m.group());
+				}
 
 			}
 			breader.close();
